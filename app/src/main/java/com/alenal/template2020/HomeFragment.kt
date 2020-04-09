@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), View.OnClickListener {
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -20,8 +20,14 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        btnOpenAbout.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_aboutFragment)
+        btnOpenAbout.setOnClickListener(this)
+        btnOpenDetails.setOnClickListener(this)
+    }
+
+    override fun onClick(v: View?) {
+        when (v) {
+            btnOpenAbout -> findNavController().navigate(R.id.action_homeFragment_to_aboutFragment)
+            btnOpenDetails -> findNavController().navigate(R.id.action_homeFragment_to_detailsFragment)
         }
     }
 }

@@ -3,4 +3,6 @@
 
     <string name="open_about_fragment">Open About fragment</string>
     <string name="hello_blank_fragment">Hello About fragment</string>
+    <string name="open_details_fragment">Details</string>
+    <string name="hello_details_fragment">Hello Details Fragment</string>
 </resources>
