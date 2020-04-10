@@ -1,11 +1,13 @@
 package com.alenal.template2020
 
 import android.os.Bundle
+import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment(), View.OnClickListener {
@@ -29,10 +31,14 @@ class HomeFragment : Fragment(), View.OnClickListener {
             btnOpenAbout -> findNavController().navigate(R.id.action_homeFragment_to_aboutFragment)
             btnOpenDetails -> {
                 //findNavController().navigate(R.id.action_homeFragment_to_detailsFragment)
+                val movie = Movie("Title", "Description")
                 val action = HomeFragmentDirections
-                    .actionHomeFragmentToDetailsFragment("Kuku")
+                    .actionHomeFragmentToDetailsFragment("Kuku", movie)
                 findNavController().navigate(action)
             }
         }
     }
 }
+
+@Parcelize
+data class Movie(val title: String, val description: String) : Parcelable

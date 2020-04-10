@@ -21,6 +21,7 @@ class DetailsFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        tvDetails.text = args.title
+        val value = "Title: ${args.title}, Movie title ${args.movie.title}"
+        tvDetails.text = value
     }
 }
