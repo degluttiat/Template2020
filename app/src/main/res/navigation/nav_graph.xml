@@ -28,5 +28,9 @@
         android:id="@+id/detailsFragment"
         android:name="com.alenal.template2020.DetailsFragment"
         android:label="fragment_details"
-        tools:layout="@layout/fragment_details" />
+        tools:layout="@layout/fragment_details" >
+        <argument
+            android:name="title"
+            app:argType="string" />
+    </fragment>
 </navigation>

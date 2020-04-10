@@ -29,7 +29,8 @@ class HomeFragment : Fragment(), View.OnClickListener {
             btnOpenAbout -> findNavController().navigate(R.id.action_homeFragment_to_aboutFragment)
             btnOpenDetails -> {
                 //findNavController().navigate(R.id.action_homeFragment_to_detailsFragment)
-                val action = HomeFragmentDirections.actionHomeFragmentToDetailsFragment()
+                val action = HomeFragmentDirections
+                    .actionHomeFragmentToDetailsFragment("Kuku")
                 findNavController().navigate(action)
             }
         }
