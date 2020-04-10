@@ -27,7 +27,11 @@ class HomeFragment : Fragment(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v) {
             btnOpenAbout -> findNavController().navigate(R.id.action_homeFragment_to_aboutFragment)
-            btnOpenDetails -> findNavController().navigate(R.id.action_homeFragment_to_detailsFragment)
+            btnOpenDetails -> {
+                //findNavController().navigate(R.id.action_homeFragment_to_detailsFragment)
+                val action = HomeFragmentDirections.actionHomeFragmentToDetailsFragment()
+                findNavController().navigate(action)
+            }
         }
     }
 }
