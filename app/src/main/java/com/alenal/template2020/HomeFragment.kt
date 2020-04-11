@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -32,12 +31,22 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
     private fun setRecyclerView() {
         //recycler.layoutManager = LinearLayoutManager(recycler.context)
+        val recyclerViewAdapter = RecyclerViewAdapter()
 
-        recycler.apply {
+        recyclerView.apply {
             layoutManager = LinearLayoutManager(context)
-            adapter = RecyclerViewAdapter()
+            adapter = recyclerViewAdapter
         }
+
+        recyclerViewAdapter.addItems(createMovies())
     }
+
+    private fun createMovies() = listOf(
+        Movie("ok", "to"),
+        Movie("ok2", "to2"),
+        Movie("ok3", "to3")
+    )
+
 
     override fun onClick(v: View?) {
         when (v) {
