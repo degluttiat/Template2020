@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.parcel.Parcelize
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -22,8 +24,19 @@ class HomeFragment : Fragment(), View.OnClickListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        setRecyclerView()
+
         btnOpenAbout.setOnClickListener(this)
         btnOpenDetails.setOnClickListener(this)
+    }
+
+    private fun setRecyclerView() {
+        //recycler.layoutManager = LinearLayoutManager(recycler.context)
+
+        recycler.apply {
+            layoutManager = LinearLayoutManager(context)
+            adapter = RecyclerViewAdapter()
+        }
     }
 
     override fun onClick(v: View?) {
