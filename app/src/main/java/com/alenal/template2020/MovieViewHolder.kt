@@ -3,6 +3,7 @@ package com.alenal.template2020
 import android.annotation.SuppressLint
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
+import com.alenal.template2020.model.Movie
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.item.*
 

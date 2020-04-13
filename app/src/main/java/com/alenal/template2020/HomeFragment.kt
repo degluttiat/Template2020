@@ -1,14 +1,13 @@
 package com.alenal.template2020
 
 import android.os.Bundle
-import android.os.Parcelable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import kotlinx.android.parcel.Parcelize
+import com.alenal.template2020.model.Movie
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment(), View.OnClickListener {
@@ -62,5 +61,3 @@ class HomeFragment : Fragment(), View.OnClickListener {
     }
 }
 
-@Parcelize
-data class Movie(val title: String, val description: String) : Parcelable
