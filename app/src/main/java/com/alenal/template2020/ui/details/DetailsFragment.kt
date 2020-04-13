@@ -1,4 +1,4 @@
-package com.alenal.template2020
+package com.alenal.template2020.ui.details
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.navArgs
+import com.alenal.template2020.DetailsFragmentArgs
+import com.alenal.template2020.R
 import kotlinx.android.synthetic.main.fragment_details.*
 
 class DetailsFragment : Fragment() {

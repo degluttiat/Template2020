@@ -1,10 +1,11 @@
-package com.alenal.template2020
+package com.alenal.template2020.ui.about
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.alenal.template2020.R
 
 /**
  * A simple [Fragment] subclass.

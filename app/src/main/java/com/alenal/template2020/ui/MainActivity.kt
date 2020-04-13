@@ -1,7 +1,8 @@
-package com.alenal.template2020
+package com.alenal.template2020.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.alenal.template2020.R
 
 class MainActivity : AppCompatActivity() {
 

@@ -1,4 +1,4 @@
-package com.alenal.template2020
+package com.alenal.template2020.ui.home
 
 import android.annotation.SuppressLint
 import android.view.View

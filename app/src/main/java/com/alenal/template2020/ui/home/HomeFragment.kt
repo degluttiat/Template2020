@@ -1,4 +1,4 @@
-package com.alenal.template2020
+package com.alenal.template2020.ui.home
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.alenal.template2020.HomeFragmentDirections
+import com.alenal.template2020.R
 import com.alenal.template2020.model.Movie
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -30,7 +32,8 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
     private fun setRecyclerView() {
         //recycler.layoutManager = LinearLayoutManager(recycler.context)
-        val recyclerViewAdapter = RecyclerViewAdapter()
+        val recyclerViewAdapter =
+            RecyclerViewAdapter()
 
         recyclerView.apply {
             layoutManager = LinearLayoutManager(context)
@@ -53,8 +56,11 @@ class HomeFragment : Fragment(), View.OnClickListener {
             btnOpenDetails -> {
                 //findNavController().navigate(R.id.action_homeFragment_to_detailsFragment)
                 val movie = Movie("Title", "Description")
-                val action = HomeFragmentDirections
-                    .actionHomeFragmentToDetailsFragment("Kuku", movie)
+                val action =
+                    HomeFragmentDirections.actionHomeFragmentToDetailsFragment(
+                        "Kuku",
+                        movie
+                    )
                 findNavController().navigate(action)
             }
         }

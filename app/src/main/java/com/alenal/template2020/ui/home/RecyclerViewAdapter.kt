@@ -1,8 +1,9 @@
-package com.alenal.template2020
+package com.alenal.template2020.ui.home
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.alenal.template2020.R
 import com.alenal.template2020.model.Movie
 
 class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
