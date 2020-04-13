@@ -12,7 +12,13 @@ import com.alenal.template2020.R
 import com.alenal.template2020.model.Movie
 import kotlinx.android.synthetic.main.fragment_home.*
 
-class HomeFragment : Fragment(), View.OnClickListener {
+class HomeFragment : Fragment(), View.OnClickListener, RecyclerViewAdapter.OnClickL {
+
+    val listOfMovies =  listOf(
+        Movie("ok", "to"),
+        Movie("ok2", "to2"),
+        Movie("ok3", "to3")
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -32,23 +38,15 @@ class HomeFragment : Fragment(), View.OnClickListener {
 
     private fun setRecyclerView() {
         //recycler.layoutManager = LinearLayoutManager(recycler.context)
-        val recyclerViewAdapter =
-            RecyclerViewAdapter()
+        val recyclerViewAdapter = RecyclerViewAdapter(this)
 
         recyclerView.apply {
             layoutManager = LinearLayoutManager(context)
             adapter = recyclerViewAdapter
         }
 
-        recyclerViewAdapter.addItems(createMovies())
+        recyclerViewAdapter.addItems(listOfMovies)
     }
-
-    private fun createMovies() = listOf(
-        Movie("ok", "to"),
-        Movie("ok2", "to2"),
-        Movie("ok3", "to3")
-    )
-
 
     override fun onClick(v: View?) {
         when (v) {
@@ -64,6 +62,17 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 findNavController().navigate(action)
             }
         }
+    }
+
+    override fun onMovieClick(position: Int) {
+        val movie = listOfMovies[position]
+
+        val action =
+            HomeFragmentDirections.actionHomeFragmentToDetailsFragment(
+                "Kuku",
+                movie
+            )
+        findNavController().navigate(action)
     }
 }
 

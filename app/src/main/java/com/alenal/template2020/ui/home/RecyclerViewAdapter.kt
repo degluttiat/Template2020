@@ -6,13 +6,18 @@ import androidx.recyclerview.widget.RecyclerView
 import com.alenal.template2020.R
 import com.alenal.template2020.model.Movie
 
-class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+// В конструктор пердается обьект типа HomeFragment (ссылка на фрагмент)
+// А мы делаем ему кастинг в "OnClickL" чтобы получить доступ только к
+// функциям даанного интерфейса а не ко всему фрагменту
+// Мы можем это сделать потому что наш фрагмент реализует интерфейс "OnClickL"
+class RecyclerViewAdapter(private val onClickL: OnClickL) :
+    RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
-    var data = listOf<Movie>()
+    private var data = listOf<Movie>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.item, parent, false)
-        return MovieViewHolder(v)
+        return MovieViewHolder(v, onClickL)
     }
 
     override fun getItemCount(): Int {
@@ -25,6 +30,10 @@ class RecyclerViewAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     fun addItems(list: List<Movie>) {
         data = list
+    }
+
+    interface OnClickL {
+        fun onMovieClick(position: Int)
     }
 }
 
