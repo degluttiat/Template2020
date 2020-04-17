@@ -34,6 +34,6 @@
             app:argType="string" />
         <argument
             android:name="movie"
-            app:argType="com.alenal.template2020.Movie" />
+            app:argType="com.alenal.template2020.model.Movie" />
     </fragment>
 </navigation>

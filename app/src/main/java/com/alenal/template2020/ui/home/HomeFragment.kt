@@ -7,14 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.alenal.template2020.HomeFragmentDirections
 import com.alenal.template2020.R
 import com.alenal.template2020.model.Movie
 import kotlinx.android.synthetic.main.fragment_home.*
 
 class HomeFragment : Fragment(), View.OnClickListener, RecyclerViewAdapter.OnClickL {
 
-    val listOfMovies =  listOf(
+    private val listOfMovies =  listOf(
         Movie("ok", "to"),
         Movie("ok2", "to2"),
         Movie("ok3", "to3")
